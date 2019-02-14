@@ -10,8 +10,10 @@ import rootReducer from './reducers';
 import rootSaga from './sagas';
 import createSagaMiddleware from 'redux-saga';
 
-axios.defaults.withCredentials = true;
-axios.defaults.baseUrl = 'https://rem-rest-api.herokuapp.com/api';
+// axios.defaults.withCredentials = true;
+// axios.defaults.baseUrl = 'http://rem-rest-api.herokuapp.com/api';
+axios.defaults.baseURL =
+	'https://cors-anywhere.herokuapp.com/https://rem.dbwebb.se/api';
 
 const sagaMiddleWare = createSagaMiddleware();
 
