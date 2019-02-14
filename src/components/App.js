@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getUsersRequest } from '../actions/users';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-      Test
-      </div>
-    );
-  }
+	constructor(props) {
+		super(props);
+	}
+
+	componentDidMount() {
+		this.props.getUsersRequest();
+	}
+
+	render() {
+		return <div className='App'>Test</div>;
+	}
 }
 
-export default App;
+export default connect(
+	null,
+	{ getUsersRequest }
+)(App);

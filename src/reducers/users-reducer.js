@@ -1,10 +1,10 @@
-import { Types } from "../actions/types";
+import { Types } from '../actions/types';
 
 const INITIAL_STATE = {
 	items: []
 };
 
-export default (UsersReducer = (state = INITIAL_STATE, action) => {
+const usersReducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case Types.GET_USERS_SUCCESS:
 			return {
@@ -13,4 +13,6 @@ export default (UsersReducer = (state = INITIAL_STATE, action) => {
 		default:
 			return state;
 	}
-});
+};
+
+export default usersReducer;
